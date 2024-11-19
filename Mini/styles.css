@@ -1,0 +1,190 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900&display=swap');
+
+/* Примерный стиль для добавления отступов между секциями */
+section {
+    margin-bottom: 80px; /* Увеличиваем отступ снизу */
+  }
+  
+/* Также можно настроить отступы для заголовков */
+h2 {
+    margin-bottom: 20px; /* Увеличиваем отступ под заголовками */
+}
+  
+.hero {
+    padding-bottom: 80px; /* Добавляем отступ снизу в hero секции */
+}
+  
+.about, .products, .contact {
+    padding-top: 40px; /* Добавляем отступ сверху для секций */
+}
+  
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: #161616;
+  color: #fff;
+  line-height: 1.6;
+  scroll-behavior: smooth;
+}
+
+.nav-wrapper {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(22, 22, 22, 0.9);
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px 0;
+}
+
+.link {
+  margin: 0 15px;
+  transition: color 0.3s ease;
+}
+
+.link span {
+  color: #fff;
+  font-size: 16px;
+  text-transform: uppercase;
+}
+
+.link:hover span {
+  color: #f0c040;
+}
+
+.cursor {
+  pointer-events: none;
+  position: fixed;
+  padding: 0.3rem;
+  background-color: #fff;
+  border-radius: 50%;
+  mix-blend-mode: difference;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.link:hover ~ .cursor {
+  transform: translate(-50%, -50%) scale(4);
+  opacity: 0.5;
+}
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 100px 20px;
+  height: 100vh;
+}
+
+.hero h1 {
+  font-size: 48px;
+  margin-bottom: 20px;
+  animation: fadeIn 1.5s ease-out;
+}
+
+.hero p {
+  font-size: 18px;
+  margin-bottom: 20px;
+  animation: fadeIn 2s ease-out;
+}
+
+.cta-button {
+  padding: 10px 20px;
+  border: 2px solid #fff;
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.cta-button:hover {
+  background: #fff;
+  color: #161616;
+}
+
+section {
+  padding: 100px 20px 50px;
+  text-align: center;
+}
+
+.product-categories {
+  margin: 20px 0;
+}
+
+.category-button {
+  background: #222;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  margin: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.category-button:hover {
+  background: #f0c040;
+}
+
+.product-gallery {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.product-item {
+  background: #222;
+  color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  width: 30%;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-item img {
+    width: 100%; /* Ширина 100% от родительского контейнера */
+    height: 200px; /* Устанавливаем фиксированную высоту */
+    object-fit: cover; /* Обрезаем изображение, сохраняя пропорции */
+    border-radius: 5px; /* Радиус для округления углов */
+  }
+  
+
+.product-item:hover {
+  transform: scale(1.05);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.section, .product-gallery {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+  }
+  
+  .section.visible, .product-gallery.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
